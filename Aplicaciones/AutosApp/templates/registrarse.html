@@ -2,17 +2,17 @@
 {% load static %}
 
 {% block titulo %}
-Inicar Sesion - Blog de Autos
+Registrarse - Blog de Autos
 {% endblock %}
 
 {% block contenido %}
 <section class="bg-light py-5">
     <div class="container px-5">
-        <h1>Inicia Sesion</h1>
+        <h1>Registrate</h1>
         <form action="" method="post">
             {% csrf_token %}
             {{form.as_p}}
-            <button type="submit" class="btn btn-success">Iniciar Sesion</button>
+            <button type="submit" class="btn btn-success">Registrarse</button>
         </form>
     </div>
 </section>

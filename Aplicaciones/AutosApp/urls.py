@@ -1,14 +1,23 @@
 from django.urls import path
 from .views import *
 urlpatterns = [
-    path('',inicio,name="inicio"),
     
+    #URLS PAGINAS
+    path('',inicio,name="inicio"),    
     path('base/',base,name="base"),
     path('contacto/',contacto,name="contacto"),
     path('consejos/',consejos,name="consejos"),
     path('noticias/',noticias,name="noticias"),
     path('opiniones/',opiniones,name="opiniones"),
+    
+    #URLS PERFIL
     path('login/',login_request,name="login"),
-    path('noticia1',noticia1,name="noticia1")
-  
-]
+    path('registrarse/',registrarse,name="registrarse"),
+    path('logout/',logout_request,name="logout"),
+    
+    # URLS NOTICIAS
+    path('noticia1/',noticia1,name="noticia1"),
+    path('noticia2/',noticia2,name="noticia2"),
+    path('noticia3/',noticia3,name="noticia3"),
+     
+]   
