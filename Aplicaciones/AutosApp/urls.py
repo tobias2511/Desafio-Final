@@ -8,5 +8,7 @@ urlpatterns = [
     path('consejos/',consejos,name="consejos"),
     path('noticias/',noticias,name="noticias"),
     path('opiniones/',opiniones,name="opiniones"),
+    path('login/',login_request,name="login"),
+    path('noticia1',noticia1,name="noticia1")
   
 ]
