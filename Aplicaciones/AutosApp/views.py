@@ -1,9 +1,10 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
 from django.contrib.auth import login,logout,authenticate
-
+from django.contrib.auth.decorators import login_required
+from Aplicaciones.AutosApp.forms import UserEditForm
 from Aplicaciones.AutosApp.models import Contacto
-from .forms import ContactoForm
+
 # Create your views here.
 
 #DEF PAGINAS
@@ -84,8 +85,33 @@ def logout_request(request):
     logout(request)
     return redirect("inicio")    
 
-def editar_perfil(request,perfil_id):
-    perfil = UserCreationForm.objects.get()
+@login_required
+def editar_perfil(request):
+    
+    user = request.user 
+
+    if request.method == "POST":
+        
+        form = UserEditForm(request.POST) 
+
+        if form.is_valid():
+
+            info = form.cleaned_data
+            user.email = info["email"]
+            user.first_name = info["first_name"]
+            user.last_name = info["last_name"]
+            
+
+            user.save()
+
+            return redirect("inicio")
+
+
+    else:
+        form = UserEditForm(initial={"email":user.email, "first_name":user.first_name, "last_name":user.last_name})
+
+    return render(request,"editar_perfil.html",{"form":form})
+    
     
 
 #DEF NOTICIAS

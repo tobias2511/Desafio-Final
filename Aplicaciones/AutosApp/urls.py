@@ -11,6 +11,9 @@ urlpatterns = [
     path('opiniones/',opiniones,name="opiniones"),
     path('mensaje/',mensaje,name = "mensaje"),
     path('confirmacion/',confirmacion,name = "confirmacion"),
+    path('editar_perfil/',editar_perfil,name = "editar_perfil"),
+    
+    
     
     #URLS PERFIL
     path('login/',login_request,name="login"),
