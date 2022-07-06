@@ -1,6 +1,9 @@
 from django.shortcuts import redirect, render
 from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
 from django.contrib.auth import login,logout,authenticate
+
+from Aplicaciones.AutosApp.models import Contacto
+from .forms import ContactoForm
 # Create your views here.
 
 #DEF PAGINAS
@@ -21,6 +24,9 @@ def contacto(request):
 
 def opiniones(request):
     return render(request,"opiniones.html",{})
+
+def confirmacion(request):
+    return render(request,"confirmacion.html",{})
 
 #DEF PERFIL
 def login_request(request):
@@ -78,6 +84,10 @@ def logout_request(request):
     logout(request)
     return redirect("inicio")    
 
+def editar_perfil(request,perfil_id):
+    perfil = UserCreationForm.objects.get()
+    
+
 #DEF NOTICIAS
 def noticia1(request):
     return render(request,"noticias/noticia1.html",{})
@@ -87,3 +97,14 @@ def noticia2(request):
 
 def noticia3(request):
     return render(request,"noticias/noticia3.html",{})
+
+#DEF CONTACTO
+def mensaje(request):
+      
+    if request.method =="POST":
+        
+        formulario = request.POST
+        
+        contacto = Contacto(nombre = formulario['txtNombre'],email = formulario['txtEmail'],mensaje = formulario['mensaje'])
+        contacto.save()
+        return redirect('confirmacion')

@@ -9,6 +9,8 @@ urlpatterns = [
     path('consejos/',consejos,name="consejos"),
     path('noticias/',noticias,name="noticias"),
     path('opiniones/',opiniones,name="opiniones"),
+    path('mensaje/',mensaje,name = "mensaje"),
+    path('confirmacion/',confirmacion,name = "confirmacion"),
     
     #URLS PERFIL
     path('login/',login_request,name="login"),
