@@ -100,8 +100,8 @@ def editar_perfil(request):
             user.email = info["email"]
             user.first_name = info["first_name"]
             user.last_name = info["last_name"]
-            
-
+            user.password = info["password1"]
+                        
             user.save()
 
             return redirect("inicio")
