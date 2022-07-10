@@ -3,7 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
 from Aplicaciones.AutosApp.forms import UserEditForm
-from Aplicaciones.AutosApp.models import Contacto
+from Aplicaciones.AutosApp.models import Contacto, Opinion
 
 # Create your views here.
 
@@ -23,14 +23,26 @@ def consejos(request):
 def contacto(request):
     return render(request,"contacto.html",{})
 
-def opiniones(request):
-    return render(request,"opiniones.html",{})
-
 def confirmacion(request):
     return render(request,"confirmacion.html",{})
 
 def creador(request):
     return render(request,"creador.html",{})
+
+def opiniones(request):
+    opinion= Opinion.objects.all()
+    return render(request,"opiniones.html",{"opinion":opinion})
+
+def agregarOpinion(request):
+    
+    if request.method == "POST":
+        
+        info_formulario = request.POST
+        
+        opinion = Opinion(nombre = info_formulario['txtNombre'],apellido = info_formulario['txtApellido'],mensaje = info_formulario['txtMensaje'])
+        opinion.save()
+        return redirect('opiniones')
+
 
 #DEF PERFIL
 def login_request(request):

@@ -13,6 +13,8 @@ urlpatterns = [
     path('confirmacion/',confirmacion,name = "confirmacion"),
     path('editar_perfil/',editar_perfil,name = "editar_perfil"),
     path('creador/',creador,name = "creador"),
+    path('agregarOpinion/',agregarOpinion),
+
        
     #URLS PERFIL
     path('login/',login_request,name="login"),
