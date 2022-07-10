@@ -29,6 +29,9 @@ def opiniones(request):
 def confirmacion(request):
     return render(request,"confirmacion.html",{})
 
+def creador(request):
+    return render(request,"creador.html",{})
+
 #DEF PERFIL
 def login_request(request):
     
@@ -100,7 +103,7 @@ def editar_perfil(request):
             user.email = info["email"]
             user.first_name = info["first_name"]
             user.last_name = info["last_name"]
-            user.password = info["password1"]
+            #user.password = info["password1"]
                         
             user.save()
 
@@ -123,6 +126,19 @@ def noticia2(request):
 
 def noticia3(request):
     return render(request,"noticias/noticia3.html",{})
+
+#DEF CONSEJOS
+def consejo1(request):
+    return render(request,"consejos/consejo1.html",{})
+
+def consejo2(request):
+    return render(request,"consejos/consejo2.html",{})
+
+def consejo3(request):
+    return render(request,"consejos/consejo3.html",{})
+
+def consejo4(request):
+    return render(request,"consejos/consejo4.html",{})
 
 #DEF CONTACTO
 def mensaje(request):
