@@ -25,6 +25,7 @@ urlpatterns = [
     path('noticia1/',noticia1,name="noticia1"),
     path('noticia2/',noticia2,name="noticia2"),
     path('noticia3/',noticia3,name="noticia3"),
+    path('noticia4/',noticia4,name="noticia4"),
     
     # URLS CONSEJOS
     path('consejo1/',consejo1,name="consejo1"),

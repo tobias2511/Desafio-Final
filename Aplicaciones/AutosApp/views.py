@@ -139,6 +139,9 @@ def noticia2(request):
 def noticia3(request):
     return render(request,"noticias/noticia3.html",{})
 
+def noticia4(request):
+    return render(request,"noticias/noticia4.html",{})
+
 #DEF CONSEJOS
 def consejo1(request):
     return render(request,"consejos/consejo1.html",{})
