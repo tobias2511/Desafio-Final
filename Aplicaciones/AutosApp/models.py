@@ -10,7 +10,7 @@ class Contacto(models.Model):
 
 class Opinion(models.Model):
     nombre = models.CharField(max_length=50)
-    apellido = models.CharField(max_length=50)
+    apellido = models.CharField(max_length=50,blank=True,null=True)
     mensaje = models.TextField()
 
     
