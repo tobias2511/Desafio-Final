@@ -47,6 +47,7 @@ def agregarOpinion(request):
         return redirect('opiniones')
 
 
+
 #DEF PERFIL
 def login_request(request):
     
@@ -115,23 +116,21 @@ def editar_perfil(request):
         if form.is_valid():
 
             info = form.cleaned_data
-            user.email = info["email"]
             user.first_name = info["first_name"]
             user.last_name = info["last_name"]
-            #user.password = info["password1"]
-                        
+                            
             user.save()
 
             return redirect("inicio")
 
 
     else:
-        form = UserEditForm(initial={"email":user.email, "first_name":user.first_name, "last_name":user.last_name})
+        form = UserEditForm(initial={"first_name":user.first_name, "last_name":user.last_name})
 
     return render(request,"editar_perfil.html",{"form":form})
-    
-    
 
+  
+  
 #DEF NOTICIAS
 def noticia1(request):
     return render(request,"noticias/noticia1.html",{})
