@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
-from Aplicaciones.AutosApp.forms import UserEditForm
+from Aplicaciones.AutosApp.forms import UserEditForm,UserRegisterForm
 from Aplicaciones.AutosApp.models import Contacto, Opinion
 
 # Create your views here.
@@ -77,16 +77,20 @@ def registrarse(request):
     
     if request.method == "POST":
         
-        form = UserCreationForm(request.POST)
+        form = UserRegisterForm(request.POST)
         
         if form.is_valid():
             
             username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
+            password1 = form.cleaned_data.get('password1')
+            password2 = form.cleaned_data.get('password2')
+            email = form.cleaned_data.get('email')
+            first_name = form.cleaned_data.get('first_name')
+            last_name = form.cleaned_data.get('last_name')
             
             form.save()
             
-            user = authenticate(username=username,password=password)
+            user = authenticate(username=username,password1=password1,password2=password2,email=email,first_name=first_name,last_name=last_name)
             
             if user is not None:
                 login(request,user)
@@ -96,7 +100,7 @@ def registrarse(request):
             
         return render(request,"registrarse.html",{"form":form})
     
-    form = UserCreationForm()
+    form = UserRegisterForm()
         
     return render(request,"registrarse.html",{"form":form})
 
@@ -116,16 +120,17 @@ def editar_perfil(request):
         if form.is_valid():
 
             info = form.cleaned_data
-            user.first_name = info["first_name"]
-            user.last_name = info["last_name"]
-                            
+            user.email = info["email"]
+            user.password1 = info["password1"]
+            user.password2 = info["password2"]  
+                        
             user.save()
 
             return redirect("inicio")
 
 
     else:
-        form = UserEditForm(initial={"first_name":user.first_name, "last_name":user.last_name})
+        form = UserEditForm(initial={"email":user.email})
 
     return render(request,"editar_perfil.html",{"form":form})
 

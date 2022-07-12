@@ -14,9 +14,9 @@ Registrarse - Blog de Autos
                     <div class="card-body p-5 text-center">  
                         <div class="mb-md- mt-md-4 pb-5">              
                             <h2 class="fw-bold mb-2 text-uppercase">Registrate</h2>
-                            <p class="text-dark-50 mb-3">Porfavor ingrese su Nombre y Contraseña</p>
+                            <p class="text-dark-50 mb-3">Porfavor ingrese los siguientes datos</p>
                                 <form action="" method="post">{% csrf_token %}
-                                    <label class="form-label" for="form2Example1">Nombre</label>
+                                    <label class="form-label" for="form2Example1">Usuario</label>
                                     <div class="form-outline form-white mb-4">
                                         {{form.username}}
                                     </div>
@@ -27,7 +27,19 @@ Registrarse - Blog de Autos
                                     <label class="form-label" for="form2Example1">Confirmar Constraseña</label>
                                     <div class="form-outline form-white mb-4">
                                         {{form.password2}}
-                                    </div>
+                                    </div>    
+                                    <label class="form-label" for="form2Example1">Email</label>
+                                    <div class="form-outline form-white mb-4">
+                                        {{form.email}}
+                                    </div> 
+                                    <label class="form-label" for="form2Example1">Nombre</label>
+                                    <div class="form-outline form-white mb-4">
+                                        {{form.first_name}}
+                                    </div> 
+                                    <label class="form-label" for="form2Example1">Apellido</label>
+                                    <div class="form-outline form-white mb-4">
+                                        {{form.last_name}}
+                                    </div>                                                                
                                     <button class="btn btn-outline-light btn-lg px-5" type="submit">Registrarse</button>
                                     </div>                                    
                                 </form>
