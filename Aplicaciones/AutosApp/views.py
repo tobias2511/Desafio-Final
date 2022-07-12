@@ -17,6 +17,9 @@ def base(request):
 def noticias(request):
     return render(request,"noticias.html",{})
 
+def consejos2(request):
+    return render(request,"consejos2.html",{})
+
 def consejos(request):
     return render(request,"consejos.html",{})
 
