@@ -48,7 +48,7 @@ def agregarOpinion(request):
         
         info_formulario = request.POST
         
-        opinion = Opinion(nombre = info_formulario['txtNombre'],apellido = info_formulario['txtApellido'],mensaje = info_formulario['txtMensaje'])
+        opinion = Opinion(nombre = info_formulario['txtNombre'],apellido = info_formulario['txtApellido'],mensaje = info_formulario['txtMensaje'],valoraciones = info_formulario['txtValoracion'])
         opinion.save()
         return redirect('opiniones')
 

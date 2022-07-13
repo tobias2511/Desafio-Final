@@ -27,7 +27,7 @@ Inicio - Blog de Autos
                     <div class="small text-muted">6 enero 2022</div>
                     <h2 class="card-title">VW Nivus y T-Cross los SUV mas Vendidos de Argentina</h2>
                     <p class="card-text">El VW Nivus y VW T-Cross fueron los SUV más vendidos en el segmento de vehículos deportivos utilitarios compactos...</p>
-                    <a class="btn btn-primary" href="{% url 'noticia4' %}">Leer Mas →</a>
+                    <a class="btn btn-outline-dark" href="{% url 'noticia4' %}">Leer Mas →</a>
                 </div>
             </div>            
             <div class="row">
@@ -40,7 +40,7 @@ Inicio - Blog de Autos
                             <div class="small text-muted">3 de Enero 2022</div>
                             <h2 class="card-title h4">Recomendaciones y Consejos para Comprar un Auto Usado</h2>
                             <p class="card-text">Hoy en día es normal la compra y venta de autos, y un auto usado es una muy buena opción para tener un vehiculo...</p>
-                            <a class="btn btn-primary" href="{% url 'consejo2' %}">Leer Mas →</a>
+                            <a class="btn btn-outline-dark" href="{% url 'consejo2' %}">Leer Mas →</a>
                         </div>
                     </div>
                     <!-- Blog post-->
@@ -50,7 +50,7 @@ Inicio - Blog de Autos
                             <div class="small text-muted">14 de Junio 2022</div>
                             <h2 class="card-title h4">Honda Civic Type R 2023: cazado en movimiento poco antes de su presentación</h2>
                             <p class="card-text">El nuevo Honda Civic Type R se presentó en el pasado Salón de Tokio aún ataviado de un frondoso camuflaje...</p>
-                            <a class="btn btn-primary" href="{% url 'noticia3' %}">Leer Mas →</a>
+                            <a class="btn btn-outline-dark" href="{% url 'noticia3' %}">Leer Mas →</a>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,7 @@ Inicio - Blog de Autos
                             <div class="small text-muted">8 de Enero 2022</div>
                             <h2 class="card-title h4">Tips para lavar el auto en casa bien a fondo y dejarlo impecable</h2>
                             <p class="card-text">Hoy les dejo en la sección tips para el auto, del cual les dejo como Lavar el Auto en casa de la mejor manera.</p>
-                            <a class="btn btn-primary" href="{% url 'consejo7' %}">Leer Mas →</a>
+                            <a class="btn btn-outline-dark" href="{% url 'consejo7' %}">Leer Mas →</a>
                         </div>
                     </div>
                     <!-- Blog post-->
@@ -72,28 +72,19 @@ Inicio - Blog de Autos
                             <div class="small text-muted">January 1, 2022</div>
                             <h2 class="card-title h4">Post Title</h2>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
-                            <a class="btn btn-primary" href="#!">Leer Mas →</a>
+                            <a class="btn btn-outline-dark" href="#!">Leer Mas →</a>
                         </div>
                     </div>
                 </div>
-            </div>           
-            
+            </div>        
         </div>
         <!-- Side widgets-->
-        <div class="col-lg-4">
-            <!-- Search widget-->
+        <div class="col-lg-4">            
+            {% if user.is_authenticated %}
             <div class="card mb-4">
-                <div class="card-header">Search</div>
-                <div class="card-body">
-                    <div class="input-group">
-                        <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
-                        <button class="btn btn-primary" id="button-search" type="button">Go!</button>
-                    </div>
-                </div>
+                <div class="card-header">Informacion Adicional</div>
+                <div class="card-body"><b>Bienvenido {{user.username}}</b> para opinar acerca del blog podes ir a la seccion de "MAS" o apretando directamente <a style="color:black" href="{% url 'opiniones' %}">aca</a></div>
             </div>
-            <!-- Categories widget-->
-            <!-- Side widget-->
-            {% if user.is_authenticated %} 
             {% else %}
             <div class="card mb-4">
                 <div class="card-header">Informacion Adicional</div>
@@ -103,7 +94,50 @@ Inicio - Blog de Autos
                   </svg></div>
             </div>
             {% endif %}
-        </div>
+            <div class="row">
+                <h4 class="block-title td-block-title" ><span class="td-pulldown-size" style="margin-right: 0px;">MAS INFORMACION</span></h4>                         
+            </div> 
+            <div class="td-block-span12">
+                <div class="td_module_8 td_module_wrap">        
+                    <div class="">
+                        <h3 class="card-title h4"><a style="color:black" href="https://tn.com.ar/autos/novedades/2022/07/12/honda-presento-la-nueva-cr-v-que-llegara-a-la-argentina-para-competir-con-toyota-volkswagen-y-jeep/" target="_BLANK">Honda presentó la nueva CR-V que llegará a la Argentina para competir con Toyota, Volkswagen y Jeep</a></h3>
+                    </div>                
+                </div>                    
+            </div>
+            <br>
+            <div class="td-block-span12">
+                <div class="td_module_8 td_module_wrap">        
+                    <div class="">
+                        <h3 class="card-title h4"><a style="color:black" href="https://tn.com.ar/autos/novedades/2022/07/12/informe-cada-vez-mas-argentinos-eligen-autos-automaticos/" target="_BLANK">Informe: cada vez más argentinos eligen autos automáticos</a></h3>
+                    </div>                
+                </div>                    
+            </div>
+            <br>
+            <div class="td-block-span12">
+                <div class="td_module_8 td_module_wrap">        
+                    <div class="">
+                        <h3 class="card-title h4"><a style="color:black" href="https://tn.com.ar/autos/novedades/2022/07/12/honda-presento-la-nueva-cr-v-que-llegara-a-la-argentina-para-competir-con-toyota-volkswagen-y-jeep/" target="_BLANK">El Volkswagen Gol, una fija entre los usados: sigue en la cima del ranking de ventas</a></h3>
+                    </div>                
+                </div>                    
+            </div>
+            <br>
+            <div class="td-block-span12">
+                <div class="td_module_8 td_module_wrap">        
+                    <div class="">
+                        <h3 class="card-title h4"><a style="color:black" href="https://tn.com.ar/autos/novedades/2022/07/11/el-volkswagen-nivus-sumo-equipamiento-y-un-nuevo-color-azul-para-la-carroceria/" target="_BLANK">El Volkswagen Nivus sumó equipamiento y un nuevo color azul para la carrocería</a></h3>
+                    </div>                
+                </div>                    
+            </div>
+            <br>
+            <div class="td-block-span12">
+                <div class="td_module_8 td_module_wrap">        
+                    <div class="">
+                        <h3 class="card-title h4"><a style="color:black" href="https://tn.com.ar/autos/novedades/2022/07/12/geely-radar-asi-es-la-nueva-pick-up-china-para-el-segmento-de-fiat-toro-y-ford-maverick/" target="_BLANK">Geely Radar: así es la nueva pick up china para el segmento de Fiat Toro y Ford Maverick </a></h3>
+                    </div>                
+                </div>                    
+            </div>
+            <br> 
+            <iframe data-creative-load-listener="" id="200_276_express_html_inpage_0.if" src="https://s0.2mdn.net/sadbundle/6402495583386341665/index.html" width="300" height="250" frameborder="0" scrolling="no" allowfullscreen="true" style="width: 300px; height: 250px;"></iframe>
     </div>
 </div>
 {% endblock %}
