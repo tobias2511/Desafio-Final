@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+Consejos - Blog de Autos
+{% endblock %}
+
+{% block contenido %}
+<br>
+<div class="container">
+    <h1 class="fw-bolder">Mas consejos para autos</h1>
+    <div class="row">
+        <!-- Blog entries-->
+        <div class="col-lg-10">                       
+            <!-- Nested row for non-featured blog posts-->
+            <div class="row">
+                <div class="col-lg-6">
+                    <!-- Blog post-->
+                    <div class="card mb-4">
+                        <a href="{% url 'consejo9' %}"><img class="card-img-top" src="https://i0.wp.com/www.blogdecoches.net/wp-content/uploads/2018/01/%C2%BFComo-saber-si-necesito-Alineado-y-Balanceado-en-el-Auto-01.jpg?resize=1068%2C601&ssl=1" width="300" height="300" alt="..." /></a>
+                        <div class="card-body">
+                            <div class="small text-muted">12 de Noviembre 2021</div>
+                            <h2 class="card-title h4">¿Como saber si necesito Alineado y Balanceo en el Auto?</h2>
+                            <p class="card-text">Una de las formas de cuidar nuestro auto es prestar atención a todos los aspectos mecánicos, uno de ellos...</p>
+                            <a class="btn btn-primary" href="{% url 'consejo9' %}">Leer Mas →</a>
+                        </div>
+                    </div>
+                    <!-- Blog post-->
+                    <div class="card mb-4">
+                        <a href="{% url 'consejo11' %}"><img class="card-img-top" src="https://i0.wp.com/www.blogdecoches.net/wp-content/uploads/2016/11/Consejos-para-Cuidar-la-Bateria-del-Auto-02.jpg?w=480&ssl=1" width="300" height="300" alt="..." /></a>
+                        <div class="card-body">
+                            <div class="small text-muted">3 de Febrero 2022</div>
+                            <h2 class="card-title h4">Consejos para Cuidar la Bateria del Auto y Obtener su mejor Rendimiento</h2>
+                            <p class="card-text">Las baterías de autos están llenos de productos químicos tóxicos y deben ser tratados con especial cuidado cuando estas...</p>
+                            <a class="btn btn-primary" href="{% url 'consejo11' %}">Leer Mas →</a>
+                        </div>
+                    </div>
+                </div>  
+                <div class="col-lg-6">
+                    <!-- Blog post-->
+                    <div class="card mb-4">
+                        <a href="{% url 'consejo10' %}"><img class="card-img-top" src="https://i0.wp.com/www.blogdecoches.net/wp-content/uploads/2014/11/Problemas-y-Soluciones-del-Aire-Acondicionado-del-Auto-01.jpg?resize=1068%2C486&ssl=1" width="300" height="300" alt="..." /></a>
+                        <div class="card-body">
+                            <div class="small text-muted">15 de Marzo 2022</div>
+                            <h2 class="card-title h4">Tips para tener en cuenta sobre el «Aire Acondicionado del Auto»</h2>
+                            <p class="card-text">Se acerca el verano y los propietarios de autos con Aire Acondicionado deben querer estar listos para sumergirse...</p>
+                            <a class="btn btn-primary" href="{% url 'consejo10' %}">Leer Mas →</a>
+                        </div>
+                    </div>
+                    <!-- Blog post-->
+                    <div class="card mb-4">
+                        <a href="{% url 'consejo12' %}"><img class="card-img-top" src="https://practicatest.cl/static/img/cl/blog/ley-cholito-transporte-mascotas.jpg" width="300" height="300" alt="..." /></a>
+                        <div class="card-body">
+                            <div class="small text-muted">6 de Junio 2022</div>
+                            <h2 class="card-title h4">¿Cómo transportar Animales en el Auto de Forma Correcta?</h2>
+                            <p class="card-text">Usted es aquel conductor que siempre deja a su perrito tomar un viento con la cabeza fuera de la ventana?</p>
+                            <a class="btn btn-primary" href="{% url 'consejo12' %}">Leer Mas →</a>
+                        </div>
+                    </div>
+                </div>
+                <nav aria-label="Pagination">
+                    <hr class="my-0" />
+                    <ul class="pagination justify-content-center my-4">
+                      <li class="page-item"><a class="page-link" href="{% url 'consejos' %}">Anterior</a></li>
+                      <li class="page-item"><a class="page-link" href="{% url 'consejos' %}">1</a></li>
+                      <li class="page-item"><a class="page-link" href="{% url 'consejos2' %}">2</a></li>
+                      <li class="page-item"><a class="page-link" href="{% url 'consejos3' %}">3</a></li>                      
+                    </ul>
+                </nav>
+            </div>          
+        </div> 
+    </div> 
+</div>         
+{% endblock %}

@@ -47,7 +47,9 @@
                             </a>
                             <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                               <li><a class="dropdown-item" href="{% url 'contacto' %}">Contacto</a></li>
-                              <li><a class="dropdown-item" href="{% url 'opiniones' %}">Opiniones</a></li>                              
+                              {% if user.is_authenticated %} 
+                                <li><a class="dropdown-item" href="{% url 'opiniones' %}">Opiniones</a></li>      
+                                {% endif %}                        
                             </ul>
                         </li> 
                     </ul>

@@ -17,11 +17,17 @@ def base(request):
 def noticias(request):
     return render(request,"noticias.html",{})
 
-def consejos2(request):
-    return render(request,"consejos2.html",{})
+def noticias2(request):
+    return render(request,"noticias2.html",{})
 
 def consejos(request):
     return render(request,"consejos.html",{})
+
+def consejos2(request):
+    return render(request,"consejos2.html",{})
+
+def consejos3(request):
+    return render(request,"consejos3.html",{})
 
 def contacto(request):
     return render(request,"contacto.html",{})
@@ -161,6 +167,32 @@ def consejo3(request):
 
 def consejo4(request):
     return render(request,"consejos/consejo4.html",{})
+
+def consejo5(request):
+    return render(request,"consejos/consejo5.html",{})
+
+def consejo6(request):
+    return render(request,"consejos/consejo6.html",{})
+
+def consejo7(request):
+    return render(request,"consejos/consejo7.html",{})
+
+def consejo8(request):
+    return render(request,"consejos/consejo8.html",{})
+
+def consejo9(request):
+    return render(request,"consejos/consejo9.html",{})
+
+def consejo10(request):
+    return render(request,"consejos/consejo10.html",{})
+
+def consejo11(request):
+    return render(request,"consejos/consejo11.html",{})
+
+def consejo12(request):
+    return render(request,"consejos/consejo12.html",{})
+
+
 
 #DEF CONTACTO
 def mensaje(request):
