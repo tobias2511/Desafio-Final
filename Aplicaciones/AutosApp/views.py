@@ -20,6 +20,9 @@ def noticias(request):
 def noticias2(request):
     return render(request,"noticias2.html",{})
 
+def noticias3(request):
+    return render(request,"noticias3.html",{})
+
 def consejos(request):
     return render(request,"consejos.html",{})
 
@@ -154,6 +157,18 @@ def noticia3(request):
 
 def noticia4(request):
     return render(request,"noticias/noticia4.html",{})
+
+def noticia5(request):
+    return render(request,"noticias/noticia5.html",{})
+
+def noticia6(request):
+    return render(request,"noticias/noticia6.html",{})
+
+def noticia7(request):
+    return render(request,"noticias/noticia7.html",{})
+
+def noticia8(request):
+    return render(request,"noticias/noticia8.html",{})
 
 #DEF CONSEJOS
 def consejo1(request):

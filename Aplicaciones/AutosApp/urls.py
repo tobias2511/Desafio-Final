@@ -11,6 +11,7 @@ urlpatterns = [
     path('consejos3/',consejos3,name="consejos3"),
     path('noticias/',noticias,name="noticias"),
     path('noticias2/',noticias2,name="noticias2"),
+    path('noticias3/',noticias3,name="noticias3"),
     path('opiniones/',opiniones,name="opiniones"),
     path('mensaje/',mensaje,name = "mensaje"),
     path('confirmacion/',confirmacion,name = "confirmacion"),
@@ -29,6 +30,10 @@ urlpatterns = [
     path('noticia2/',noticia2,name="noticia2"),
     path('noticia3/',noticia3,name="noticia3"),
     path('noticia4/',noticia4,name="noticia4"),
+    path('noticia5/',noticia5,name="noticia5"),
+    path('noticia6/',noticia6,name="noticia6"),
+    path('noticia7/',noticia7,name="noticia7"),
+    path('noticia8/',noticia8,name="noticia8"),
     
     # URLS CONSEJOS
     path('consejo1/',consejo1,name="consejo1"),

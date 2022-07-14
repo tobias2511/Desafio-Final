@@ -7,10 +7,10 @@ Inicio - Blog de Autos
 
 {% block contenido %}
 <!-- Page header with logo and tagline-->
-<header class="py-5 bg-light border-bottom mb-4">
+<header class="py-5 bg-light border-bottom mb-4" background-image="https://lasvegasentuidioma.com/wp-content/uploads/2018/11/Manejo-de-Autos-Exoticos-en-Las-Vegas-Header.jpg">
     <div class="container">
         <div class="text-center my-5">
-            <h1 class="fw-bolder">Bienvenido al Blog de Autos!!</h1>
+            <h1 class="fw-bolder">BIENVENIDO AL BLOG DE AUTOS</h1>
             <p class="lead mb-0">Aqui te podras informar de la mejor manera sobre autos!!</p>
         </div>
     </div>
@@ -22,7 +22,7 @@ Inicio - Blog de Autos
         <div class="col-lg-8">
             <!-- Featured blog post-->
             <div class="card mb-4">
-                <a href="#!"><img class="card-img-top" src="https://i0.wp.com/www.blogdecoches.net/wp-content/uploads/2022/01/VW-T-Cross-Nivus-1-1.jpeg?resize=1068%2C601&ssl=1" width="400" height="400" alt="..." /></a>
+                <a href="{% url 'noticia4' %}"><img class="card-img-top" src="https://i0.wp.com/www.blogdecoches.net/wp-content/uploads/2022/01/VW-T-Cross-Nivus-1-1.jpeg?resize=1068%2C601&ssl=1" width="400" height="400" alt="..." /></a>
                 <div class="card-body">
                     <div class="small text-muted">6 enero 2022</div>
                     <h2 class="card-title">VW Nivus y T-Cross los SUV mas Vendidos de Argentina</h2>
@@ -35,7 +35,7 @@ Inicio - Blog de Autos
                     <div class="col-lg-6">
                     <!-- Blog post-->
                     <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="https://i0.wp.com/www.blogdecoches.net/wp-content/uploads/2015/11/Recomendaciones-y-Consejos-para-comprar-un-Auto-Usado-01.jpg?w=800&ssl=1" width="250" height="250" alt="..." /></a>
+                        <a href="{% url 'consejo2' %}"><img class="card-img-top" src="https://i0.wp.com/www.blogdecoches.net/wp-content/uploads/2015/11/Recomendaciones-y-Consejos-para-comprar-un-Auto-Usado-01.jpg?w=800&ssl=1" width="250" height="250" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">3 de Enero 2022</div>
                             <h2 class="card-title h4">Recomendaciones y Consejos para Comprar un Auto Usado</h2>
@@ -45,7 +45,7 @@ Inicio - Blog de Autos
                     </div>
                     <!-- Blog post-->
                     <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="https://soymotor.com/sites/default/files/imagenes/noticia/honda_civic_type_r_2023_0.jpg" width="250" height="250" alt="..." /></a>
+                        <a href="{% url 'noticia3' %}"><img class="card-img-top" src="https://soymotor.com/sites/default/files/imagenes/noticia/honda_civic_type_r_2023_0.jpg" width="250" height="250" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">14 de Junio 2022</div>
                             <h2 class="card-title h4">Honda Civic Type R 2023: cazado en movimiento poco antes de su presentación</h2>
@@ -57,7 +57,7 @@ Inicio - Blog de Autos
                 <div class="col-lg-6">
                     <!-- Blog post-->
                     <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="https://i0.wp.com/www.blogdecoches.net/wp-content/uploads/2019/11/Tips-para-lavar-el-auto-en-casa-bien-a-fondo-03-e1586203581211.jpg?w=900&ssl=1" width="250" height="250" alt="..." /></a>
+                        <a href="{% url 'consejo7' %}"><img class="card-img-top" src="https://i0.wp.com/www.blogdecoches.net/wp-content/uploads/2019/11/Tips-para-lavar-el-auto-en-casa-bien-a-fondo-03-e1586203581211.jpg?w=900&ssl=1" width="250" height="250" alt="..." /></a>
                         <div class="card-body">
                             <div class="small text-muted">8 de Enero 2022</div>
                             <h2 class="card-title h4">Tips para lavar el auto en casa bien a fondo y dejarlo impecable</h2>
@@ -67,12 +67,12 @@ Inicio - Blog de Autos
                     </div>
                     <!-- Blog post-->
                     <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="https://dummyimage.com/700x350/dee2e6/6c757d.jpg" width="250" height="250" alt="..." /></a>
+                        <a href="{% url 'noticia5' %}"><img class="card-img-top" src="https://i0.wp.com/www.blogdecoches.net/wp-content/uploads/2021/08/Nuevo-Skoda-Fabia-2022-01.jpg?w=600&ssl=1" width="250" height="250" alt="..." /></a>
                         <div class="card-body">
-                            <div class="small text-muted">January 1, 2022</div>
-                            <h2 class="card-title h4">Post Title</h2>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis aliquid atque, nulla? Quos cum ex quis soluta, a laboriosam.</p>
-                            <a class="btn btn-outline-dark" href="#!">Leer Mas →</a>
+                            <div class="small text-muted">17 de Agosto 2021</div>
+                            <h2 class="card-title h4">Aquí te presento el Nuevo Skoda Fabia 2022 y todas sus Caracteristicas</h2>
+                            <p class="card-text">Škoda, lanzó oficialmente el Fabia de nueva generación , una escotilla compacta derivada del Polo.Esta es la cuarta generación de Fabia...</p>
+                            <a class="btn btn-outline-dark" href="{% url 'noticia5' %}  ">Leer Mas →</a>
                         </div>
                     </div>
                 </div>
@@ -138,6 +138,7 @@ Inicio - Blog de Autos
             </div>
             <br> 
             <iframe data-creative-load-listener="" id="200_276_express_html_inpage_0.if" src="https://s0.2mdn.net/sadbundle/6402495583386341665/index.html" width="300" height="250" frameborder="0" scrolling="no" allowfullscreen="true" style="width: 300px; height: 250px;"></iframe>
+        </div>
     </div>
 </div>
 {% endblock %}
