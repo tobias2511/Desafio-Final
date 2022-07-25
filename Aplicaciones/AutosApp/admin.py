@@ -11,3 +11,4 @@ class OpinionAdmin(admin.ModelAdmin):
 
 admin.site.register(Contacto,ContactoAdmin)
 admin.site.register(Opinion,OpinionAdmin)
+admin.site.register(Avatar)

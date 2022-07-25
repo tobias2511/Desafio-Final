@@ -13,11 +13,13 @@ urlpatterns = [
     path('noticias2/',noticias2,name="noticias2"),
     path('noticias3/',noticias3,name="noticias3"),
     path('opiniones/',opiniones,name="opiniones"),
+    path('creador/',creador,name = "creador"),
     path('mensaje/',mensaje,name = "mensaje"),
     path('confirmacion/',confirmacion,name = "confirmacion"),
     path('editar_perfil/',editar_perfil,name = "editar_perfil"),
-    path('creador/',creador,name = "creador"),
+    path('editar_comentario/',editar_comentario,name = "editar_comentario"),
     path('agregarOpinion/',agregarOpinion),
+    path('agregar_avatar',agregar_avatar,name = "agregar_avatar"),
 
        
     #URLS PERFIL
@@ -34,6 +36,10 @@ urlpatterns = [
     path('noticia6/',noticia6,name="noticia6"),
     path('noticia7/',noticia7,name="noticia7"),
     path('noticia8/',noticia8,name="noticia8"),
+    path('noticia9/',noticia9,name="noticia9"),
+    path('noticia10/',noticia10,name="noticia10"),
+    path('noticia11/',noticia11,name="noticia11"),
+    path('noticia12/',noticia12,name="noticia12"),
     
     # URLS CONSEJOS
     path('consejo1/',consejo1,name="consejo1"),

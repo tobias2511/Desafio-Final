@@ -1,5 +1,5 @@
 from django import forms
-from .models import Contacto
+from .models import Contacto,Opinion,Avatar
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
@@ -32,3 +32,21 @@ class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2','first_name','last_name']
+
+class OpinionForm(forms.Form):
+    nombre = forms.CharField(label="nombre")
+    apellido = forms.CharField(label="apellido")
+    mensaje = forms.CharField(label="mensaje")
+    
+    class Meta:
+        model = Opinion
+        fields = ['nombre','apellido','mensaje']
+        
+
+class AvatarForm(forms.Form):
+
+    imagen = forms.ImageField(label="Imagen", required=False)
+
+    class Meta:
+        model = Avatar
+        fields = ['imagen']

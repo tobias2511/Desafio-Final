@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block titulo %}
+Inicio - Blog de Autos
+{% endblock %}
+
+{% block contenido %}
+<section class="py-5 gradient-custom">
+    <div class="container py-4 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">  
+                        <div class="mb-md- mt-md-4 pb-5">              
+                            <h2 class="fw-bold mb-2 text-uppercase">Edita tu Comentario</h2>
+                                <form action="" method="post">{% csrf_token %} 
+                                    <label class="form-label" for="form2Example1">Nombre</label>
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="text" id="txtNombre" name="txtNombre" value={{comentario.nombre}} class="form-control" placeholder="Nombre" maxlength="50" required>
+                                    </div>
+                                    <label class="form-label" for="form2Example1">Apellido</label>
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="text" id="txtApellido" name="txtApellido" value={{comentario.apellido}} class="form-control" placeholder="Apellido" maxlength="50" required>
+                                    </div>  
+                                    <label class="form-label" for="form2Example1">Mensaje</label>
+                                    <div class="form-outline form-white mb-4">
+                                        <input type="text" id="txtMensaje" name="txtMensaje" value={{comentario.mensaje}} class="form-control" placeholder="Mensaje" maxlength="" required>
+                                    </div>                                       
+                                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Guardar Cambios</button>
+                                    </div>                                    
+                                </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br><br>
+{% endblock %}
+<section class="bg-light py-5">
+    <div class="container px-5">
+        <h1>Edita tu perfil {{username}}</h1>
+        <form action="" method="post">
+            {% csrf_token %}
+           {{form.as_p}}
+
+            <button type="submit" class="btn btn-success">Guardar Cambios</button>
+        </form>
+    </div>
+</section>
+
+
