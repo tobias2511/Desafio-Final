@@ -249,7 +249,7 @@ def agregar_avatar(request):
 
             avatar = Avatar(usuario=user, imagen=form.cleaned_data["imagen"])
 
-            avatar.save()
+            avatar.save
             
             return redirect("inicio")
 
@@ -286,39 +286,123 @@ def editar_comentario(request):
 
     
 def noticia1(request):
+    if request.user.is_authenticated:
+        try:
+            avatar = Avatar.objects.get(usuario=request.user)
+            url = avatar.imagen.url
+        except:
+            avatar = None    
+        return render (request,"noticias/noticia1.html",{"avatar":avatar})
     return render(request,"noticias/noticia1.html",{})
 
 def noticia2(request):
+    if request.user.is_authenticated:
+        try:
+            avatar = Avatar.objects.get(usuario=request.user)
+            url = avatar.imagen.url
+        except:
+            avatar = None    
+        return render (request,"noticias/noticia2.html",{"avatar":avatar})
     return render(request,"noticias/noticia2.html",{})
 
 def noticia3(request):
+    if request.user.is_authenticated:
+        try:
+            avatar = Avatar.objects.get(usuario=request.user)
+            url = avatar.imagen.url
+        except:
+            avatar = None    
+        return render (request,"noticias/noticia3.html",{"avatar":avatar})
     return render(request,"noticias/noticia3.html",{})
 
 def noticia4(request):
+    if request.user.is_authenticated:
+        try:
+            avatar = Avatar.objects.get(usuario=request.user)
+            url = avatar.imagen.url
+        except:
+            avatar = None    
+        return render (request,"noticias/noticia4.html",{"avatar":avatar})
     return render(request,"noticias/noticia4.html",{})
 
 def noticia5(request):
+    if request.user.is_authenticated:
+        try:
+            avatar = Avatar.objects.get(usuario=request.user)
+            url = avatar.imagen.url
+        except:
+            avatar = None    
+        return render (request,"noticias/noticia5.html",{"avatar":avatar})
     return render(request,"noticias/noticia5.html",{})
 
 def noticia6(request):
+    if request.user.is_authenticated:
+        try:
+            avatar = Avatar.objects.get(usuario=request.user)
+            url = avatar.imagen.url
+        except:
+            avatar = None    
+        return render (request,"noticias/noticia6.html",{"avatar":avatar})
     return render(request,"noticias/noticia6.html",{})
 
 def noticia7(request):
+    if request.user.is_authenticated:
+        try:
+            avatar = Avatar.objects.get(usuario=request.user)
+            url = avatar.imagen.url
+        except:
+            avatar = None    
+        return render (request,"noticias/noticia7.html",{"avatar":avatar})
     return render(request,"noticias/noticia7.html",{})
 
 def noticia8(request):
+    if request.user.is_authenticated:
+        try:
+            avatar = Avatar.objects.get(usuario=request.user)
+            url = avatar.imagen.url
+        except:
+            avatar = None    
+        return render (request,"noticias/noticia8.html",{"avatar":avatar})
     return render(request,"noticias/noticia8.html",{})
 
 def noticia9(request):
+    if request.user.is_authenticated:
+        try:
+            avatar = Avatar.objects.get(usuario=request.user)
+            url = avatar.imagen.url
+        except:
+            avatar = None    
+        return render (request,"noticias/noticia9.html",{"avatar":avatar})
     return render(request,"noticias/noticia9.html",{})
 
 def noticia10(request):
+    if request.user.is_authenticated:
+        try:
+            avatar = Avatar.objects.get(usuario=request.user)
+            url = avatar.imagen.url
+        except:
+            avatar = None    
+        return render (request,"noticias/noticia10.html",{"avatar":avatar})
     return render(request,"noticias/noticia10.html",{})
 
 def noticia11(request):
+    if request.user.is_authenticated:
+        try:
+            avatar = Avatar.objects.get(usuario=request.user)
+            url = avatar.imagen.url
+        except:
+            avatar = None    
+        return render (request,"noticias/noticia11.html",{"avatar":avatar})
     return render(request,"noticias/noticia11.html",{})
 
 def noticia12(request):
+    if request.user.is_authenticated:
+        try:
+            avatar = Avatar.objects.get(usuario=request.user)
+            url = avatar.imagen.url
+        except:
+            avatar = None    
+        return render (request,"noticias/noticia12.html",{"avatar":avatar})
     return render(request,"noticias/noticia12.html",{})
 
 #DEF CONSEJOS
