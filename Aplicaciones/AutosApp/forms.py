@@ -26,8 +26,8 @@ class UserRegisterForm(UserCreationForm):
     password1 = forms.CharField(label="Contraseña", widget=forms.PasswordInput) 
     password2 = forms.CharField(label="Confirmar contraseña", widget=forms.PasswordInput)
     username = forms.CharField(label="Usuario")
-    first_name = forms.CharField()
-    last_name = forms.CharField()
+    first_name = forms.CharField(required=True)
+    last_name = forms.CharField(required=True)
 
     class Meta:
         model = User
