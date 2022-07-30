@@ -1,10 +1,16 @@
+from email.mime import image
 import re
+from django.contrib import messages
 from django.shortcuts import redirect, render
-from django.contrib.auth.forms import AuthenticationForm,UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm, PasswordChangeForm
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.decorators import login_required
 from Aplicaciones.AutosApp.forms import *
 from Aplicaciones.AutosApp.models import Contacto, Opinion,Avatar
+from django.contrib.auth.views import PasswordChangeView
+from django.urls import reverse_lazy, reverse
+
+
 
 # Create your views here.
 
@@ -120,29 +126,20 @@ def creador(request):
     
     return render(request,"creador.html",{})
 
-def confirmacion(request):
-    
-    if request.user.is_authenticated:
-        try:
-            avatar = Avatar.objects.get(usuario=request.user)
-            url = avatar.imagen.url
-        except:
-            avatar = None    
-        return render (request,"confirmacion.html",{"avatar":avatar})
-    
-    return render(request,"confirmacion.html",{})
 
 def opiniones(request):   
-    opinion= Opinion.objects.all()
+    opinion= Opinion.objects.all().order_by('-id')
     return render(request,"opiniones.html",{"opinion":opinion})
 
 def agregarOpinion(request):
+    
+    user = request.user
     
     if request.method == "POST":
         
         info_formulario = request.POST
         
-        opinion = Opinion(nombre = info_formulario['txtNombre'],apellido = info_formulario['txtApellido'],mensaje = info_formulario['txtMensaje'])
+        opinion = Opinion(nombre = user.first_name,apellido = user.last_name,mensaje = info_formulario['txtMensaje'])
         opinion.save()
         return redirect('opiniones')
 
@@ -221,18 +218,18 @@ def editar_perfil(request):
         if form.is_valid():
 
             info = form.cleaned_data
-            user.email = info["email"]
-            user.password1 = info["password1"]
-            user.password2 = info["password2"]  
+            user.email = info['email']
+            user.first_name = info['first_name']
+            user.last_name = info['last_name']       
                         
             user.save()
-
-            return redirect("inicio")
+            
+            messages.success(request, "Los cambios fueron actualizados.") 
+            return redirect("editar_perfil")
 
 
     else:
-        form = UserEditForm(initial={"email":user.email})
-        
+        form = UserEditForm(initial={'email':user.email, "first_name":user.first_name, "last_name":user.last_name})
 
     return render(request,"editar_perfil.html",{"form":form})
 
@@ -260,29 +257,40 @@ def agregar_avatar(request):
 
 
 @login_required
-def editar_comentario(request):
+def editar_comentario(request,opinion_id):
     
-    user = request.user
-
+    opinion = Opinion.objects.get(id=opinion_id)
+    
     if request.method == "POST":
     
-        form = OpinionForm(request.POST)
+        form = OpinionForm(request.POST,request.FILES)
         
         if form.is_valid():
             
             info = form.cleaned_data
-            user.nombre = info["nombre"]
-            user.apellido = info["apellido"]
-            user.mensaje = info["mensaje"]
+            opinion.nombre = info["nombre"]
+            opinion.apellido = info["apellido"]
+            opinion.mensaje = info["mensaje"]
             
-            user.save()
+            opinion.save()
 
             return redirect("opiniones") 
     else:
-        form = OpinionForm(initial={"nombre":user.first_name,"apellido":user.last_name}) 
+        form = OpinionForm(initial={"nombre":opinion.nombre,"apellido":opinion.apellido,"mensaje":opinion.mensaje}) 
 
     return render(request,"editar_comentario.html",{"form":form})
 
+class cambiar_contraseña(PasswordChangeView):
+    form = PasswordChangeForm
+    success_url = reverse_lazy('editar_perfil') 
+
+    def get_context_data(self, *args, **kwargs):
+        contexto = super(cambiar_contraseña, self).get_context_data()
+        mensaje = messages.success(self.request, 'La contraseña se cambio correctamente')
+
+        contexto['mensaje']=mensaje
+
+        return contexto
 
     
 def noticia1(request):
@@ -537,4 +545,6 @@ def mensaje(request):
         
         contacto = Contacto(nombre = formulario['txtNombre'],email = formulario['txtEmail'],mensaje = formulario['mensaje'])
         contacto.save()
-        return redirect('confirmacion')
+        
+        messages.success(request, "Enviado correctamente!!") 
+        return redirect('contacto')

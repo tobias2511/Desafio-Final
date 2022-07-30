@@ -15,11 +15,12 @@ urlpatterns = [
     path('opiniones/',opiniones,name="opiniones"),
     path('creador/',creador,name = "creador"),
     path('mensaje/',mensaje,name = "mensaje"),
-    path('confirmacion/',confirmacion,name = "confirmacion"),
     path('editar_perfil/',editar_perfil,name = "editar_perfil"),
     path('editar_comentario/',editar_comentario,name = "editar_comentario"),
     path('agregarOpinion/',agregarOpinion),
     path('agregar_avatar',agregar_avatar,name = "agregar_avatar"),
+    path('cambiar_contraseña',cambiar_contraseña.as_view(template_name='cambiar_contraseña.html'),name = "cambiar_contraseña"),
+
 
        
     #URLS PERFIL

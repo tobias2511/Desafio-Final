@@ -32,6 +32,12 @@ Contacto - Blog de Autos
                     <div class="form-group py-2">
                         <textarea class="form-control" id="mensaje" name="mensaje" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>                        
                     </div>
+                    {%for msg in messages%}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{msg}}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>
+                    {%endfor%}
                     <div class="form-group py-2">
                        <button type="submit" class="btn btn-outline-dark">Enviar Mensaje</button>
                     </div>                

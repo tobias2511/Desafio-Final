@@ -20,16 +20,24 @@ Inicio - Blog de Autos
                                     <div class="form-outline form-white mb-4">
                                         {{form.email}}
                                     </div>
-                                    <label class="form-label" for="form2Example1">Contraseña</label>
+                                    <label class="form-label" for="form2Example1">Nombre</label>
                                     <div class="form-outline form-white mb-4">
-                                        {{form.password1}}
-                                    </div>  
-                                    <label class="form-label" for="form2Example1">Confirmar Constraseña</label>
+                                        {{form.first_name}}   
+                                    </div>      
+                                    <label class="form-label" for="form2Example1">Apellido</label>
                                     <div class="form-outline form-white mb-4">
-                                        {{form.password2}}
-                                    </div>                                       
-                                    <button class="btn btn-outline-light btn-lg px-5" type="submit">Guardar Cambios</button>
-                                    </div>                                    
+                                        {{form.last_name}}   
+                                    </div>   
+                                    {%for msg in messages%}
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    {{msg}}
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
+                                    {%endfor%}       
+                                    <button class="btn btn-outline-light btn-lg px-4" type="submit">Guardar Cambios</button>
+                                    </div>     
+                                    <a class="btn btn-outline-light btn-lg px-4" href="{% url 'cambiar_contraseña' %}" style="text-align: center;">Cambiar Contraseña</a>                                   
+                               
                                 </form>
                         </div>
                     </div>
@@ -39,17 +47,5 @@ Inicio - Blog de Autos
     </div>
 </section>
 <br><br><br>
+
 {% endblock %}
-<section class="bg-light py-5">
-    <div class="container px-5">
-        <h1>Edita tu perfil {{username}}</h1>
-        <form action="" method="post">
-            {% csrf_token %}
-           {{form.as_p}}
-
-            <button type="submit" class="btn btn-success">Guardar Cambios</button>
-        </form>
-    </div>
-</section>
-
-

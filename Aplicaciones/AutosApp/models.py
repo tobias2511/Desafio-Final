@@ -16,6 +16,7 @@ class Opinion(models.Model):
     apellido = models.CharField(max_length=50,blank=True,null=True)
     mensaje = models.TextField()
     
+    
 class Avatar(models.Model):
     
     usuario = models.OneToOneField(User, on_delete=models.CASCADE)

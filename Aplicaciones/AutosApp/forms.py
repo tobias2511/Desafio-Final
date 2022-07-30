@@ -9,29 +9,28 @@ class ContactoForm(forms.ModelForm):
         model = Contacto
         fields = '__all__'
 
-class UserEditForm(UserCreationForm):
+class UserEditForm(forms.Form):
 
-    email = forms.EmailField(label="Email")
-    password1 = forms.CharField(label="Contraseña", widget=forms.PasswordInput, required=False) 
-    password2 = forms.CharField(label="Confirmar contraseña", widget=forms.PasswordInput, required=False)
+    email = forms.EmailField(label="Email")  
+    first_name = forms.CharField(label="Nombre")
+    last_name = forms.CharField(label="Apellido")    
     
     class Meta:
         model = User
-        fields = ['email', 'password1', 'password2',]
-        help_texts = {k:"" for k in fields}
+        fields = ['email', 'first_name', 'last_name']
+       
         
 class UserRegisterForm(UserCreationForm):
     
-    email = forms.EmailField(label="Email")
-    password1 = forms.CharField(label="Contraseña", widget=forms.PasswordInput) 
-    password2 = forms.CharField(label="Confirmar contraseña", widget=forms.PasswordInput)
-    username = forms.CharField(label="Usuario")
-    first_name = forms.CharField(required=True)
-    last_name = forms.CharField(required=True)
+    email = forms.EmailField(label="Email", required=True)
+    password1 = forms.CharField(label="Contraseña", widget=forms.PasswordInput)
+    password2 = forms.CharField(label="Confirmar", widget=forms.PasswordInput)
+    first_name = forms.CharField(label="Nombre", required=False)
+    last_name = forms.CharField(label="Apellido", required=False)
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2','first_name','last_name']
+        fields = ['username', 'email', 'password1', 'password2', 'first_name', 'last_name']
 
 class OpinionForm(forms.Form):
     nombre = forms.CharField(label="nombre")
